@@ -1,0 +1,15 @@
+# Environments
+venv/
+.env/
+# Python
+__pycache__/
+*.py[cod]
+
+# Data (This is optional)
+# If my CVs are very large, ignore them
+# but for this small project, you can keep them
+# data/*.csv
+
+# IDEs
+.vscode/
+.idea/

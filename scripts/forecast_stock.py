@@ -34,3 +34,7 @@ plt.legend()
 plt.show()
 
 print(model_fit.summary())
+
+
+test.to_csv('data/test_results.csv')
+forecast_df.to_csv('data/forecast_results.csv')

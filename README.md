@@ -27,39 +27,37 @@ This repository covers the full data lifecycle: from automated API-based extract
 ├── README.md           # Documentation
 └── requirements.txt    # Project dependencies
 ```
-### 🚀 1. Data Extraction Pipeline
+## 🚀 1. Data Extraction Pipeline
 Instead of using static CSVs, this project uses a "Pro" approach by pulling live market data directly from Yahoo Finance.File: scripts/get_data.py
 
 ## 📊 2. Statistical Methodology
 The analysis follows a rigorous three-step statistical process:
-**A. Stationarity Testing:**
+
+### A. Stationarity Testing:
 Stock prices are typically non-stationary (they trend over time). To make the data predictable, we apply the **Augmented Dickey-Fuller (ADF)** test.
 * **Null Hypothesis ($H_0$):** The data is non-stationary.
 * Goal: Achieve a p-value $< 0.05$ through First-Order Differencing:
 $$\Delta Y_t = Y_t - Y_{t-1}$$
 
-**B. Seasonal Decomposition:**
+### B. Seasonal Decomposition:
 We break the stock price into three distinct components to understand the underlying drivers:
 1. **Trend:** The long-term direction (Bull vs. Bear).
 2. **Seasonality:** Repeating patterns (e.g., quarterly earnings cycles).
 3. **Residuals:** "Noise" or unexpected market shocks.
 
-### ⚙️ Installation & Usage
+## ⚙️ Installation & Usage
 1. Clone the repo:
-Bash
-```
-git clone [https://github.com/YOUR_USERNAME/apple-stock-forecasting.git](https://github.com/YOUR_USERNAME/apple-stock-forecasting.git)
+```bash
+git clone https://github.com/YOUR_USERNAME/apple-stock-forecasting.git
 cd apple-stock-forecasting
 ```
 
 2. Install requirements:
-Bash
-```
+```Bash
 pip install yfinance pandas matplotlib statsmodels seaborn
 ```
 
 3. Run the pipeline:
-Bash
-```
+```Bash
 python3 scripts/get_data.py
 ```
